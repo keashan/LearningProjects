@@ -34,12 +34,12 @@ df4[0]=df4[0].str.strip(']')
 
 df1=df4[0].str.split(',',expand=True)
 
-df1.head()
+print(df1.head())
 
 df5=df1.rename(columns=df1.iloc[0])
-df5.head()
+print(df5.head())
 
-df6=df5.dropna(axis=0,how='any')
-df6.drop(df6.index[0],inplace=True)
-df6.replace(r'\s', '', regex = True, inplace = True)
-df6.head()
+df5=df5.dropna(axis=0,how='any')
+df5=df5.drop(df5.index[0])
+df5=df5.replace(r'\s', '', regex = True)
+print(df5.head())
